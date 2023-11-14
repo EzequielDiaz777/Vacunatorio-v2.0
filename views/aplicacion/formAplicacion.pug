@@ -1,0 +1,15 @@
+head
+    title Aplicacion Vacunas
+section#formAplicacion
+h2 Aplicación de Vacunas
+form(action="/aplicaciones" method="post")
+    label(for="persona") Seleccione un agente:
+    select#personaSelect(name="DNIAgente")
+        option(value="") Seleccione un agente de salud
+        each agente in agentes
+            //- console.log(p.DNI == agente.DNI)
+            option(value=agente.DNI)= personas.filter(p => p.DNI == agente.DNI).nombre + ' ' + personas.filter(p => p.DNI == agente.DNI).apellido
+    br
+    br
+
+    button(type="submit") Guardar

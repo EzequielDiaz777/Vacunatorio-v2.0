@@ -1,0 +1,13 @@
+head
+    title Centro de vacunación
+section#formCentroDeVacunacion
+h2 Editar Centro de vacunación
+form(action="/centrosdevacunaciones/"+ctroDeVac.idCentroDeVacunacion+"?_method=PUT" method="post")
+    label(for="longitud") Longitud:
+    input(type="number" id="longitud" name="longitud" value=ctroDeVac.longitud required)
+    label(for="latitud") Latitud:
+    input(type="number" id="latitud" name="latitud" value=ctroDeVac.latitud required)
+    br
+    br
+
+    button(type="submit") Actualizar

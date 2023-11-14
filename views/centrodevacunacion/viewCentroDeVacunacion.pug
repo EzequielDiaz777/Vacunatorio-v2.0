@@ -1,0 +1,28 @@
+head
+    title Centro de Vacunación
+section#viewCentroDeVacunacion
+    table
+        thead
+            tr
+                th ID del centro de vacunación
+                th Longitud
+                th Latitud
+        tbody
+            each ctroDeVac in centrosDeVacunaciones
+                tr
+                    td= ctroDeVac.idCentroDeVacunacion
+                    td= ctroDeVac.longitud
+                    td= ctroDeVac.latitud 
+                    td 
+                        button(onclick=`redirectToURL(${ctroDeVac.idCentroDeVacunacion})`) Editar
+                        form(method="post" action="/centrosdevacunaciones/"+ctroDeVac.idCentroDeVacunacion+"?_method=DELETE" style="display: inline")
+                            button(type="submit") Eliminar 
+    button(onclick="crear()") Crear 
+    button(type="submit") Volver
+script.
+    function redirectToURL(id){
+        window.location.href= "/centrosdevacunaciones/" + id
+    }
+    function crear(){
+        window.location.href= "/centrosdevacunaciones/crear"
+    }

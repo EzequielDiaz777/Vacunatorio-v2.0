@@ -1,0 +1,38 @@
+head
+    title Descarte
+section#formDescarte
+h2 Ingresar un Descarte
+form(action="/guardar-descarte" method="post")
+      label(for="persona") Seleccione un Agente de Salud existente:
+      select#personaSelect(name="DNIAgente")
+        option(value="") Seleccione un agente de salud para ingresar su matricula:
+            each persona in personas
+                if(persona.ocupacion === "agenteDeSalud")
+                    option(value=persona.DNI)= persona.nombre + ' ' + persona.apellido
+      br
+      br
+      label(for="num-serie") Nº de Serie Lote Interno:
+      select#numeroDeSerieSelect(name="numeroDeSerie")
+            option(value="") Selecciona un Lote Interno
+                each loteI in lotesInternos
+                    option(value=loteI.numeroDeSerie)= loteI.numeroDeSerie
+      br
+      br
+      label(for="emp-desc") Empresa Descartante:
+      input(type="text" id="empr-desc" name="empresaDescartante" required)
+      br
+      br
+      label(for="motivo") Motivo Descarte:
+      input(type="text" id="motivo" name="motivo" required)
+      br
+      br
+      label(for="cant-vac") Cantidad de Vacunas:
+      input(type="number" id="cant-vac" name="cantidadDeVacunas" required)
+      br
+      br
+      label(for="fecha-desc") Fecha Descarte:
+      input(type="date" id="fecha-desc" name="fechaDeDescarte" required)
+      br
+      br
+      
+      button(type="submit") Guardar

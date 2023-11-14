@@ -1,0 +1,12 @@
+head
+    title Centro de Vacunacion
+section#formCentroDeVacunacion
+h2 Ingresar Centro Vacunación
+form(action="/centrosdevacunaciones" method="post")
+    label(for="longitud") Longitud:
+    input(type="number" id="longitud" name="longitud" placeholder="Ej. -54.660728" required)
+    label(for="latitud") Latitud:
+    input(type="number" id="latitud" name="latitud" placeholder="Ej. -32.603722" required)
+    br
+    br
+    button(type="submit") Guardar

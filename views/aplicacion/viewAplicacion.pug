@@ -1,0 +1,31 @@
+head
+  title Aplicación
+section#viewAplicacion
+  table
+    thead
+      tr
+        th DNI del paciente
+        th DNI del agente de salud
+        th Número de serie de la vacuna aplicada
+        th Fecha aplicación de la vacuna
+    tbody
+      each ap in aplicacion
+        tr
+          td= ap.DNIPAciente
+          td= ap.DNIAgente
+          td= ap.numerodeSerie
+          td= ap.fechaDeAplicacion
+          td 
+            button(onclick=`redirectToURL('${aplicacion.idAplicacion}')`) Editar
+            form(method="post" action=`/aplicaciones/${aplicacion.idAplicacion}?_method=DELETE` style="display: inline")
+              button(type="submit") Eliminar
+
+  button(onclick="crear()") Crear 
+  button(type="submit") Volver
+script.
+  function redirectToURL(id){
+    window.location.href= "/aplicaciones/" + id
+  }
+  function crear(){
+    window.location.href= "/aplicaciones/crear"
+  }
