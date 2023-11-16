@@ -65,6 +65,10 @@ const createPersona = async (req, res) => {
         DNI,
         celular2
       });
+    } else {
+      await Telefono.create({
+        DNI
+      });
     };
     if (patologiaBase !== "") {
       await PatologiaBase.create({
@@ -168,6 +172,18 @@ const updatePersona = async (req, res) => {
         {
           celular1: null,
           celular2: celular2,
+        },
+        {
+          where: {
+            DNI: req.params.id,
+          },
+        }
+      );
+    } else {
+      await Telefono.update(
+        {
+          celular1: null,
+          celular2: null,
         },
         {
           where: {
