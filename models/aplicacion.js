@@ -40,4 +40,7 @@ const aplicacion = Aplicacion.init(
   }
 );
 
+// Agregar el método toJSON al prototipo del modelo
+
+
 module.exports = aplicacion;

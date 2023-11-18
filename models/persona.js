@@ -30,4 +30,9 @@ const persona = Persona.init(
     tableName: "persona",
   }
 );
+
+Persona.prototype.toJSON = function () {
+  return Object.assign({}, this.get());
+};
+
 module.exports = persona;

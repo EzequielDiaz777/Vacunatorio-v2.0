@@ -3,7 +3,9 @@ const { Laboratorio } = require("../models/relaciones");
 // Obtener todos los laboratorios
 const getAllLaboratorios = async (req, res) => {
   try {
-    let laboratorios = await Laboratorio.findAll();
+    let laboratorios = await Laboratorio.findAll({
+      raw: true
+    });
     res.render("laboratorio/viewLaboratorio", { laboratorios: laboratorios });
   } catch (error) {
     res.status(500).json({
@@ -12,7 +14,7 @@ const getAllLaboratorios = async (req, res) => {
   }
 };
 // Muestra formulario de creacion de Laboratorio
-const crearLaboratorio = async (req, res) => {
+const altaLaboratorio = async (req, res) => {
   try {
     res.render("laboratorio/formLaboratorio");
   } catch (error) {
@@ -87,7 +89,7 @@ const deleteLaboratorio = async (req, res) => {
 
 module.exports = {
   getAllLaboratorios,
-  crearLaboratorio,
+  altaLaboratorio,
   createLaboratorio,
   editLaboratorio,
   updateLaboratorio,

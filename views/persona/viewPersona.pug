@@ -47,7 +47,7 @@ h2 Listado de personas
                         button(onclick=`redirectToURL(${persona.DNI})`) Editar
                         form(method="post" action="/personas/"+persona.DNI+"?_method=DELETE" style="display: inline")
                             button(type="submit") Eliminar
-    button(onclick="crear()") Crear 
+    button(onclick="crear()") Crear
     button(type="submit") Volver
 script.
     function redirectToURL(id){

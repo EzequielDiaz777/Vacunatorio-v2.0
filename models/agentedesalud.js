@@ -23,4 +23,9 @@ const agentedesalud = Agentedesalud.init(
     tableName: "agentedesalud",
   }
 );
+
+Agentedesalud.prototype.toJSON = function () {
+  return Object.assign({}, this.get());
+};
+
 module.exports = agentedesalud;
