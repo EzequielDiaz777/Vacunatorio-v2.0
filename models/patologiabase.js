@@ -12,7 +12,7 @@ const patologiabase = Patologiabase.init(
     },
     patologiaBase: {
       type: DataTypes.STRING,
-      primaryKey: true,
+      unique: true,
     },
   },
   {

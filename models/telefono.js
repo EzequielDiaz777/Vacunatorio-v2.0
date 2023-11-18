@@ -9,10 +9,15 @@ const telefono = Telefono.init(
     DNI: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      //foreignKey: true,
     },
-    celular1: DataTypes.STRING,
-    celular2: DataTypes.STRING,
+    celular1: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    celular2: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
 
   {

@@ -12,6 +12,7 @@ const agentedesalud = Agentedesalud.init(
     },
     matricula: {
       allowNull: false,
+      unique: true,
       type: DataTypes.INTEGER,
     },
   },

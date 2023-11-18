@@ -10,12 +10,30 @@ const laboratorio = Laboratorio.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    nombreLaboratorio: DataTypes.STRING,
-    pais: DataTypes.STRING,
-    email: DataTypes.STRING,
-    telefono: DataTypes.STRING,
-    longitud: DataTypes.DOUBLE,
-    latitud: DataTypes.DOUBLE,
+    nombreLaboratorio: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    pais: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    telefono: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    longitud: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
+    latitud: {
+      type: DataTypes.DOUBLE,
+      allowNull: false,
+    },
   },
   {
     sequelize,
@@ -25,4 +43,5 @@ const laboratorio = Laboratorio.init(
     tableName: "laboratorio",
   }
 );
+
 module.exports = laboratorio;

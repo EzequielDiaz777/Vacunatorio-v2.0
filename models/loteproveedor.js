@@ -14,19 +14,32 @@ const loteproveedor = Loteproveedor.init(
     idLaboratorio: {
       type: DataTypes.INTEGER,
       foreignKey: true,
-      //unique: true,
+      unique: true,
+      allowNull: false,
     },
-    tipoDeVacuna: DataTypes.STRING,
-    nombreComercial: DataTypes.STRING,
-    cantidadDeLotesInternos: DataTypes.INTEGER,
+    tipoDeVacuna: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    nombreComercial: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    cantidadDeLotesInternos: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     fechaDeFabricacion: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
     },
     fechaDeVencimiento: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
     },
     fechaDeCompra: {
       type: DataTypes.DATEONLY,
+      allowNull: false,
     },
   },
   {
