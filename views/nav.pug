@@ -1,0 +1,32 @@
+nav
+    ul(href="/laboratorios" class="drop") Laboratorios
+        li 
+            a(href="/laboratorios/alta") Alta
+    a(href="/aplicaciones") Aplicaciones
+    ul(href="/personas" class="drop") Personas
+        li 
+            a(href="/personas/crear") Alta 
+    a(href="/centrosdevacunaciones") Centros de Vacunacion
+    ul(href="/depositosnacionales" class="drop") Depositos Nacionales
+        li 
+            a(href="/depositosnacionales/alta") Alta
+    ul(href="/depositosprovinciales" class="drop") Depositos Provinciales
+        li 
+            a(href="/depositosprovinciales/alta") Alta
+    a(href="/descartes") Descartes
+    ul(href="/lotesinternos" class="drop") Lotes Internos
+        li 
+                a(href="/lotesinternos/crear") Crear
+    ul(href="/lotesproveedores" class="drop") Lotes Proveedores
+        li 
+            a(href="/lotesproveedores/crear") Crear
+    ul(href="/traslados" class="drop") Traslados
+        li 
+            a(href="/translados/crear") Crear
+script.
+    $(()=>{
+        $("ul").on("click", function (){
+            window.location.href= $(this).attr("href")
+        })
+    })
+    

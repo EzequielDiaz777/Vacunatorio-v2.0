@@ -22,6 +22,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("public"));
 
+
+
 // Agrega las rutas a la aplicación
 app.use("/", indexRouter);
 
@@ -60,5 +62,7 @@ app.use(function (err, req, res, next) {
 });
 
 require("./models/relaciones");
+
+
 
 module.exports = app;

@@ -6,6 +6,7 @@ const router = express.Router();
 router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
+
 // Ruta para mostrar todos los formularios
 /*router.get("/Altas/formAgenteDeSalud", (req, res) => {
   res.render("formAgenteDeSalud");
